@@ -32,5 +32,10 @@ public class JobTest {
         assertEquals("Quality control", thirdJob.getPositionType().getValue());
         assertEquals("Persistence", thirdJob.getCoreCompetency().getValue());
     }
+
+    @Test
+    public void testJobsForEquality() {
+        assertFalse(firstJob.equals(secondJob));
+    }
 }
 
