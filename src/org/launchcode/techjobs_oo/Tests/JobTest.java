@@ -9,12 +9,13 @@ import static org.junit.Assert.*;
 
 public class JobTest {
 
-    private Job firstJob, secondJob;
+    private Job firstJob, secondJob, thirdJob;
 
     @Before
     public void createTestJobObjects() {
         firstJob = new Job();
         secondJob = new Job();
+        thirdJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
     }
 
     @Test
@@ -25,7 +26,11 @@ public class JobTest {
 
     @Test
     public void testJobConstructorSetsAllFields() {
-        new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        assertEquals("Product tester", thirdJob.getName());
+        assertEquals("ACME", thirdJob.getEmployer().getValue());
+        assertEquals("Desert", thirdJob.getLocation().getValue());
+        assertEquals("Quality control", thirdJob.getPositionType().getValue());
+        assertEquals("Persistence", thirdJob.getCoreCompetency().getValue());
     }
 }
 
