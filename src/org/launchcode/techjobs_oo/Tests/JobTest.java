@@ -37,5 +37,26 @@ public class JobTest {
     public void testJobsForEquality() {
         assertFalse(firstJob.equals(secondJob));
     }
+
+    //Test Driven Development (TDD) : write tests to satisfy requirements of our future toString method
+    // TODO 1. When passed a Job object, it should return a string that contains a blank line before and after the job information
+    @Test
+    public void testToStringReturnsNewLine() {
+        //Get first character of string
+        char firstCharacter = thirdJob.toString().charAt(0);
+        //Get last character
+        char lastCharacter = thirdJob.toString().charAt(thirdJob.toString().length()-1);
+        assertTrue(firstCharacter==lastCharacter);
+    }
+
+    // TODO 2. The string should contain a label for each field, followed by the data stored in that field.
+    //  Each field should be on its own line.
+
+    // TODO 3. If a field is empty, the method should add, "Data not available" after the label.
+
+    // TODO 4. If a Job object ONLY contains data for the Id field,
+    //  the method should return, "OOPS! This job does not seem to exist."
+
+
 }
 
