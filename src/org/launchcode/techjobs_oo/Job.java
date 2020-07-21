@@ -99,13 +99,32 @@ public class Job {
     @Override
     public String toString() {
         String output = "";
+
+        if (name == "") {
+            return "Data not available";
+        }
+        if (employer.getValue() == "") {
+            return "Data not available";
+        }
+        if (location.getValue() == "") {
+            return "Data not available";
+        }
+        if (positionType.getValue() == "") {
+            return "Data not available";
+        }
+        if (coreCompetency.getValue() == "") {
+            return "Data not available";
+        }
         output =
-            "\n" + "ID=" + id + "\n" +
-            "\n" + "Name=" + name + "\n" +
-            "\n" + "Employer=" + employer + "\n" +
-            "\n" + "Location=" + location + "\n" +
-            "\n" + "Position Type=" + positionType + "\n" +
-            "\n" + "Core Competency=" + coreCompetency + "\n";
+            "\n" + "ID: " + id + "\n" +
+            "\n" + "Name: " + name + "\n" +
+            "\n" + "Employer: " + employer + "\n" +
+            "\n" + "Location: " + location + "\n" +
+            "\n" + "Position Type: " + positionType + "\n" +
+            "\n" + "Core Competency: " + coreCompetency + "\n";
         return output;
+
     }
+
+
 }
